@@ -21,13 +21,17 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @Controller
-@RequestMapping("/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @GetMapping("/login")
+    @RequestMapping("/hello")
+    public String hello(){
+        return "Hello Wwold!";
+    }
+
+    @RequestMapping("/login")
     @ResponseBody
     public ApiResponse login(@RequestParameter SimpleRequest request){
         log.info("登录");
