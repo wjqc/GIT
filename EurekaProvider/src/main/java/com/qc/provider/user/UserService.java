@@ -1,4 +1,4 @@
-package com.qc.api.user;
+package com.qc.provider.user;
 
 import com.qc.common.bean.UserLoginBean;
 

@@ -1,6 +1,6 @@
 package com.qc.provider.mapper;
 
-import com.qc.common.entity.UserEntity;
+import com.qc.provider.entity.UserEntity;
 import tk.mybatis.mapper.common.Mapper;
 
 

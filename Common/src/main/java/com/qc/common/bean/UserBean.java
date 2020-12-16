@@ -1,7 +1,6 @@
 package com.qc.common.bean;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import lombok.Data;
 

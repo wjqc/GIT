@@ -1,17 +1,17 @@
 package com.qc.cicada.user;
 
-import com.qc.api.user.UserService;
-import com.qc.common.annotation.RequestParameter;
 import com.qc.common.bean.UserLoginBean;
 import com.qc.common.exception.ErrorCode;
-import com.qc.common.message.ApiResponse;
-import com.qc.common.message.SimpleRequest;
+import com.qc.common.message.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * 
@@ -24,7 +24,10 @@ import lombok.extern.slf4j.Slf4j;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private RestTemplate restTemplate;
+
+    @Value("${server.url}")
+    private String url;
 
     @RequestMapping("/hello")
     public String hello(){
@@ -33,18 +36,13 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public ApiResponse login(@RequestParameter SimpleRequest request){
+    public BaseResponse login(@RequestBody UserLoginBean request){
         log.info("登录");
-        String loginName = request.getString("loginName");
-        String password = request.getString("password");
-        UserLoginBean bean = new UserLoginBean();
-        bean.setLoginName(loginName);
-        bean.setPassword(password);
-        boolean login = userService.login(bean);
-        if (login){
-            return ApiResponse.OK;
+        ResponseEntity<BaseResponse> login = restTemplate.postForEntity(url+"/login",request,BaseResponse.class);
+        if ("000000".equals(login.getBody().getCode())){
+            return BaseResponse.Success();
         }
-        return ApiResponse.error(ErrorCode.USER_OR_PASSWD_ERROR);
+        return BaseResponse.Fail();
     }
 
 }
