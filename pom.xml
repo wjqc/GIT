@@ -14,7 +14,6 @@
         <module>EurekaServer</module>
         <module>Cicada</module>
         <module>Common</module>
-        <module>Api</module>
     </modules>
 
 

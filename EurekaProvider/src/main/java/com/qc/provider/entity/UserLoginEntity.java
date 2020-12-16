@@ -1,4 +1,4 @@
-package com.qc.common.entity;
+package com.qc.provider.entity;
 
 import javax.persistence.*;
 

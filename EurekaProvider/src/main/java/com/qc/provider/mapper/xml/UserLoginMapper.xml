@@ -3,14 +3,9 @@
 
 <mapper namespace="com.qc.provider.mapper.UserLoginMapper">
 
-    <resultMap type="com.qc.provider.entity..UserLoginEntity" id="userLoginMap">
+    <resultMap type="com.qc.provider.entity.UserLoginEntity" id="userLoginMap">
 		<result property="userId" column="user_id"/>
 		<result property="loginName" column="login_name"/>
 		<result property="password" column="password"/>
     </resultMap>
-
-	<select id="selectbyName" parameterType="String" resultMap="userLoginMap">
-		select * from user_login where login_name
-	</select>
-
 </mapper>

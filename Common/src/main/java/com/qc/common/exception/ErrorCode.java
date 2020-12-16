@@ -8,6 +8,7 @@ public class ErrorCode implements Serializable {
 
 	private static final long serialVersionUID = 2471999484765518060L;
 
+	public static final ErrorCode SUCCESS = new ErrorCode("000000","交易成功");
 	public static final ErrorCode SYS_UNKNOWN = new ErrorCode("100001", "系统未知错误");
 	public static final ErrorCode SYS_NO_DATA_SUCCESS = new ErrorCode("100002", "操作失败，请重试");
 	public static final ErrorCode SYS_PARAM_INVALID = new ErrorCode("100003", "参数校验失败");
