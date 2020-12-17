@@ -10,10 +10,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>EurekaProvider</module>
-        <module>EurekaServer</module>
+        <module>Provider</module>
         <module>Cicada</module>
         <module>Common</module>
+        <module>Feign</module>
     </modules>
 
 

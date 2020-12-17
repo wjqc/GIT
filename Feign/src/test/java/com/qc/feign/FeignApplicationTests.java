@@ -1,10 +1,10 @@
-package com.lx.eureka;
+package com.qc.feign;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaApplicationTests {
+class FeignApplicationTests {
 
     @Test
     void contextLoads() {

@@ -10,9 +10,9 @@
     </parent>
 
     <groupId>com.qc</groupId>
-    <artifactId>EurekaProvider</artifactId>
+    <artifactId>Provider</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>EurekaProvider</name>
+    <name>Provider</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -26,10 +26,10 @@
             <artifactId>Common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--服务注册-->
+        <!--注册中心-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
         <!--mysql-->
