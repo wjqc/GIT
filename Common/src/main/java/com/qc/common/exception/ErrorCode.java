@@ -13,6 +13,7 @@ public class ErrorCode implements Serializable {
 	public static final ErrorCode SYS_NO_DATA_SUCCESS = new ErrorCode("100002", "操作失败，请重试");
 	public static final ErrorCode SYS_PARAM_INVALID = new ErrorCode("100003", "参数校验失败");
 	public static final ErrorCode USER_OR_PASSWD_ERROR = new ErrorCode("100004", "用户名或密码错误");
+	public static final ErrorCode NO_AUTH = new ErrorCode("100005", "非法请求");
 
 	
 	private String code;

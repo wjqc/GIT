@@ -1,5 +1,6 @@
 package com.qc.cicada.user;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.qc.cicada.service.user.UserLoginService;
 import com.qc.common.bean.UserLoginBean;
 import com.qc.common.message.BaseResponse;
@@ -29,6 +30,7 @@ public class UserController {
     }
 
     @RequestMapping("/login")
+    @HystrixCommand(fallbackMethod = "fallback")
     @ResponseBody
     public BaseResponse login(@RequestBody UserLoginBean request){
         BaseResponse login = userLoginService.login(request);
@@ -36,6 +38,10 @@ public class UserController {
             return BaseResponse.Success();
         }
         return BaseResponse.Fail();
+    }
+
+    String fallback(){
+        return "服务繁忙,请稍后重试";
     }
 
 }
