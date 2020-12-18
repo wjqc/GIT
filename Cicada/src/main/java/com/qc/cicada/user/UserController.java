@@ -2,18 +2,13 @@ package com.qc.cicada.user;
 
 import com.qc.cicada.service.user.UserLoginService;
 import com.qc.common.bean.UserLoginBean;
-import com.qc.common.exception.ErrorCode;
 import com.qc.common.message.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * 
