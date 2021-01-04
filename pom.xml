@@ -13,7 +13,7 @@
         <module>Provider</module>
         <module>Cicada</module>
         <module>Common</module>
-        <module>Zuul</module>
+        <!--<module>Zuul</module>-->
     </modules>
 
 
