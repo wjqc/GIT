@@ -50,12 +50,12 @@ public class UserEntity extends BaseEntity {
 	private String email;
 	
 	/**  */
-	@Column(name = "adress")
-	private String adress;
+	@Column(name = "address")
+	private String address;
 	
 	/**  */
 	@Column(name = "identNo")
-	private String identno;
+	private String identNo;
 	
 	/** 用户级别，0:系统管理员，1：管理员,2：普通用户 */
 	@Column(name = "level")

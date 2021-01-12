@@ -1,8 +1,9 @@
 package com.qc.cicada.user;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.qc.cicada.service.user.UserLoginService;
+import com.qc.cicada.service.user.UserService;
 import com.qc.common.bean.UserLoginBean;
+import com.qc.common.bean.UserRegisterBean;
 import com.qc.common.message.BaseResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 public class UserController {
 
     @Autowired
-    private UserLoginService userLoginService;
+    private UserService userService;
 
     @RequestMapping("/hello")
     public String hello(){
@@ -33,12 +34,15 @@ public class UserController {
     @HystrixCommand(fallbackMethod = "fallback")
     @ResponseBody
     public BaseResponse login(@RequestBody UserLoginBean request){
-        BaseResponse login = userLoginService.login(request);
-        if ("000000".equals(login.getCode())){
-            return BaseResponse.Success();
-        }
-        return BaseResponse.Fail();
+        return userService.login(request);
     }
+
+    @RequestMapping("/register")
+    @ResponseBody
+    public BaseResponse register(@RequestBody UserRegisterBean bean){
+        return userService.register(bean);
+    }
+
 
     String fallback(){
         return "服务繁忙,请稍后重试";

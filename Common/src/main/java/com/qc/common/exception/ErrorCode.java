@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
 
-public class ErrorCode implements Serializable {
+public class ErrorCode extends Throwable implements Serializable {
 
 	private static final long serialVersionUID = 2471999484765518060L;
 
@@ -14,6 +14,7 @@ public class ErrorCode implements Serializable {
 	public static final ErrorCode SYS_PARAM_INVALID = new ErrorCode("100003", "参数校验失败");
 	public static final ErrorCode USER_OR_PASSWD_ERROR = new ErrorCode("100004", "用户名或密码错误");
 	public static final ErrorCode NO_AUTH = new ErrorCode("100005", "非法请求");
+	public static final ErrorCode REGISTER_FAIL = new ErrorCode("100006", "用户注册失败");
 
 	
 	private String code;

@@ -8,8 +8,8 @@
 		<result property="userName" column="user_name"/>
 		<result property="phone" column="phone"/>
 		<result property="email" column="email"/>
-		<result property="adress" column="adress"/>
-		<result property="identno" column="identNo"/>
+		<result property="address" column="address"/>
+		<result property="identNo" column="identNo"/>
 		<result property="level" column="level"/>
     </resultMap>
 

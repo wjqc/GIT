@@ -31,11 +31,10 @@ public class BaseResponse<T> implements Serializable {
         return response;
     }
 
-    public static BaseResponse error(String code, Object data){
+    public static BaseResponse error(ErrorCode code, Object data){
         BaseResponse<Object> response = new BaseResponse<>();
-        ErrorCode errorCode = new ErrorCode(code);
-        response.setMsg(errorCode.getCode());
-        response.setCode(errorCode.getText());
+        response.setMsg(code.getText());
+        response.setCode(code.getCode());
         response.setData(data);
         return response;
     }
