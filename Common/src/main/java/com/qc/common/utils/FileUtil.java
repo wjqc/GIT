@@ -113,7 +113,7 @@ public class FileUtil {
 
 	public static void writeTmpFile(String fileName, String content) {
 		// 鑾峰彇绋嬪簭褰撳墠璺緞
-		String strDir = System.getProperty("user.dir");
+		String strDir = System.getProperty("controller.dir");
 		// 灏嗚矾寰勫垎闅旂鏇存崲
 		String folderpath = strDir;// .replace("/", File.separatorChar);
 		String filepath = folderpath + File.separatorChar + fileName + ".tmp";
@@ -122,7 +122,7 @@ public class FileUtil {
 
 	public static String readTmpFile(String fileName) {
 		// 鑾峰彇绋嬪簭褰撳墠璺緞
-		String strDir = System.getProperty("user.dir");
+		String strDir = System.getProperty("controller.dir");
 		// 灏嗚矾寰勫垎闅旂鏇存崲
 		String folderpath = strDir;// .replace("/", File.separatorChar);
 		String filepath = folderpath + File.separatorChar + fileName + ".tmp";

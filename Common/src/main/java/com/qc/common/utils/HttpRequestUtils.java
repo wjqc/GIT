@@ -59,7 +59,7 @@ public class HttpRequestUtils {
 	public static boolean isMobileDevice(HttpServletRequest request) {
 		
 		String via = request.getHeader("Via");
-		String userAgent = request.getHeader("user-agent");
+		String userAgent = request.getHeader("controller-agent");
 		
 		boolean mobileFlag = containsItem(via, mobileGateWayHeaders);
 		

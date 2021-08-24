@@ -15,7 +15,7 @@ import lombok.EqualsAndHashCode;
  * @datetime 2020-12-01 18:20:48
  */
 @Data
-@Table(name = "user")
+@Table(name = "controller")
 @EqualsAndHashCode(callSuper=false)
 public class UserEntity extends BaseEntity {
 
