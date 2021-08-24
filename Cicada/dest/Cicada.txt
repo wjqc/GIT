@@ -1,2 +1,15 @@
 用于提供对外API
 负责前端交互
+
+#sh>chmod a+x filename
+然后修改文件格式
+#sh>vi filename
+利用如下命令查看文件格式
+:set ff 或 :set fileformat
+可以看到如下信息
+fileformat=dos 或 fileformat=unix
+利用如下命令修改文件格式
+:set ff=unix 或 :set fileformat=unix
+:wq (存盘退出)
+最后再执行文件
+#sh>./filename

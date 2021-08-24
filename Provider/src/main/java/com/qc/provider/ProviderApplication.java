@@ -13,9 +13,9 @@ import tk.mybatis.spring.annotation.MapperScan;
 public class ProviderApplication {
 
     public static void main(String[] args) {
-        log.info("EurekaProvider Started...");
+        log.info("<---ProviderApplication is running--->");
         SpringApplication.run(ProviderApplication.class, args);
-        log.info("EurekaProvider Success...");
+        log.info("<---ProviderApplication is Success--->");
     }
 
 }
