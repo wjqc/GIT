@@ -14,7 +14,7 @@
         </filter>
         <File>${LOG_HOME}/error.log</File>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOG_HOME}/backups/error.%d{yyyyMMdd}.log</FileNamePattern>
+            <FileNamePattern>${LOG_HOME}/backups/%d{yyyyMMdd}/error.%d{yyyyMMdd}.log</FileNamePattern>
             <maxHistory>90</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -38,7 +38,7 @@
                 </filter>
                 <File>${LOG_HOME}/${SERVICE_ID}.log</File>
                 <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                    <FileNamePattern>${LOG_HOME}/backups/${SERVICE_ID}.%d{yyyy-MM-dd}.log</FileNamePattern>
+                    <FileNamePattern>${LOG_HOME}/backups/%d{yyyyMMdd}/${SERVICE_ID}.%d{yyyyMMdd}.log</FileNamePattern>
                     <maxHistory>90</maxHistory>
                 </rollingPolicy>
                 <encoder>
