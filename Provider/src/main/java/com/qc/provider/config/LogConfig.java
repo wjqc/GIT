@@ -1,6 +1,6 @@
-package com.qc.cicada.config;
+package com.qc.provider.config;
 
-import com.qc.cicada.Handle.LogInterceptor;
+import com.qc.provider.Handle.LogInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -18,4 +18,5 @@ public class LogConfig implements WebMvcConfigurer {
         InterceptorRegistration registration = registry.addInterceptor(new LogInterceptor());
         registration.addPathPatterns("/**");
     }
+
 }
